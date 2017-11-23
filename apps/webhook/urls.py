@@ -5,6 +5,6 @@ from apps.webhook import views
 
 
 urlpatterns = [
-    url(r'^$', views.conexion, name='conexion'),
+    url(r'^$', views.conexion.as_view(), name='conexion'),
 
 ]
