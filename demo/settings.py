@@ -81,6 +81,11 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bot',  # Or path to database file if using sqlite3.
+        'USER': 'postgres',  # Not used with sqlite3.
+        'PASSWORD': '1234',  # Not used with sqlite3.
+        'HOST': 'localhost',  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',
         'ATOMIC_REQUESTS': True
     }
 }
@@ -123,7 +128,7 @@ USE_TZ = True
 
 
 db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] =  dj_database_url.config(default='postgres://user:pass@localhost/dbname')
 
 STATIC_URL = '/static/'
 
