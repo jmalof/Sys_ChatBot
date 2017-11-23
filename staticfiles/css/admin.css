@@ -1,0 +1,136 @@
+.login-box-msg, .register-box-msg {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.titulo {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
+    padding-top: 3px;
+}
+
+.table tbody tr td {
+    font-size: 13px;
+    margin: 0 auto;
+}
+
+.table-bordered {
+    border: 1px solid #d0d8da;
+}
+
+.table tbody tr td, .table thead tr th {
+    border: 1px solid #d0d8da;
+}
+
+.skin-blue .sidebar-menu>li.header {
+    color: white;
+    background: #3c8dbc;
+}
+
+.content-header > h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.main-footer {
+    padding: 5px 10px 5px 10px;
+}
+
+.skin-blue-light .sidebar-menu>li.header {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.password-progress {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.control-sidebar-bg, .control-sidebar {
+    top: 0;
+    right: -600px;
+    width: 600px;
+    -webkit-transition: right 0.3s ease-in-out;
+    -o-transition: right 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
+}
+
+.header {
+    background: none;
+}
+
+.modal-footer {
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+
+.tpd-content-spacer, .tpd-content-relative, .tpd-content-relative-padder {
+    float: left;
+    position: relative;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.box .border-right {
+    border-right: 1px solid #ccc;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #3c8dbc;
+}
+
+.panel-primary {
+    border-color: #d2d6de;
+}
+
+.btn.btn-flat {
+    border-radius: 14px;
+}
+
+.content-header > h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #eae8e8;
+}
+
+.box-header {
+    color: #444;
+    background-color: #f4f4f4;
+}
+
+.content-wrapper {
+    background-color: #fff7eb;
+}
+
+.box-footer {
+    color: #444;
+    background-color: #f4f4f4;
+    border-top: 1px solid #eae8e8;
+}
+
+img.logomin {
+    width: 40px;
+}
+
+img.logomincomp {
+    width: 230px;
+    height: 50px;
+    margin-left: -16px;
+    margin-top: -5px;
+}
+
+.content-wrapper{
+ background-color: #e8f4ed;
+}
+
+.logoazul{
+    width: 100%;
+}

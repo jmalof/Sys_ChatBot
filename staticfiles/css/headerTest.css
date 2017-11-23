@@ -1,0 +1,42 @@
+.navbar-static-top .navbar-nav > li > a:hover, .navbar-static-top .navbar-nav > li > a:focus {
+    color: #000;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-static-top .navbar-nav > .active > a, .navbar-static-top .navbar-nav > .active >
+a:hover, .navbar-static-top .navbar-nav > .active > a:focus {
+    color: white; /*BACKGROUND color for active*/
+    background-color: #030033;
+}
+
+.navbar-static-top {
+    background-color: #3C8DBC;
+}
+.dropdown-menu > .user-header{
+    background-color: #3C8DBC;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #66CCFF;  /*change color of links in drop down here*/
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: rgba(44, 105, 188, 0.84); /*Change rollover cell color here*/
+}
+
+
+.navbar-static-top .navbar-nav > li > a {
+    color: white; /*Change active text color here*/
+}
+
+.navbar-static-top .navbar-header >  a {
+    font-size: 25px;
+    color: white; /*Change active text color here*/
+}
+.navbar-static-top .navbar-header >  h6 {
+    color: white; /*Change active text color here*/
+}
+
