@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="wrapper">
+        <header class="main-header">
+            {% include "sistema/header.html" %}
+        </header>
+
+        <div class="content-wrapper">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <footer class="main-footer">
+            {% include "sistema/footer.html" %}
+        </footer>
+
+    </div>
+{% endblock %}

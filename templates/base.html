@@ -1,0 +1,151 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="{% static "img/icon.png" %}"/>
+    <link rel="stylesheet" href="{% static "plugins/isloading-v1.0.6/isloading-v1.0.6.css" %}"/>
+    <link rel="stylesheet" href="{% static "plugins/bootstrap-3.3.7/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "plugins/font-awesome-4.7.0/css/font-awesome.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "plugins/ionicons-2.0.1/css/ionicons.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "plugins/jquery-ui-1.12.1/jquery-ui.css" %}"/>
+    <script src="{% static "plugins/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "plugins/jquery-ui-1.12.1/jquery-ui.min.js" %}"></script>
+    <script src="{% static "plugins/bootstrap-3.3.7/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "plantilla/js/app.js" %}"></script>
+    <script src="{% static "plugins/moment.js" %}"></script>
+    <link rel="stylesheet" href="{% static "plugins/dataTables-1.10.15/media/css/dataTables.bootstrap.min.css" %}"/>
+    <link rel="stylesheet"
+          href="{% static "plugins/dataTables-1.10.15/extensions/Buttons/css/buttons.dataTables.min.css" %}"/>
+    <link rel="stylesheet"
+          href="{% static "plugins/dataTables-1.10.15/extensions/Responsive/css/responsive.bootstrap.min.css" %}"/>
+    <script src="{% static "plugins/dataTables-1.10.15/media/js/jquery.dataTables.js" %}"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/extensions/Buttons/js/dataTables.buttons.min.js" %}"
+            type="text/javascript"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/extensions/Buttons/js/jszip.min.js" %}"
+            type="text/javascript"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/extensions/Buttons/js/pdfmake.min.js" %}"
+            type="text/javascript"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/extensions/Buttons/js/vfs_fonts.js" %}"
+            type="text/javascript"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/extensions/Buttons/js/buttons.html5.min.js" %}"
+            type="text/javascript"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/media/js/dataTables.bootstrap.min.js" %}"></script>
+    <script src="{% static "plugins/dataTables-1.10.15/extensions/Responsive/js/dataTables.responsive.min.js" %}"></script>
+    <link rel="stylesheet" href="{% static "plugins/formvalidation-0.6.0/css/formValidation.css" %}"/>
+    <script src="{% static "plugins/formvalidation-0.6.0/js/jquery.validate.js" %}" type="text/javascript"></script>
+    <script src="{% static "plugins/formvalidation-0.6.0/js/formValidation.js" %}" type="text/javascript"></script>
+    <script src="{% static "plugins/formvalidation-0.6.0/js/framework/bootstrap.js" %}" type="text/javascript"></script>
+    <script src="{% static "plugins/formvalidation-0.6.0/js/language/es_ES.js" %}" type="text/javascript"></script>
+    <script src="{% static "plugins/jquery-loading-overlay-1.5.3/loadingoverlay.min.js" %}"
+            type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "plantilla/css/ionicons.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "plantilla/css/AdminLTE.css" %}"/>
+    <link rel="stylesheet" href="{% static "plantilla/css/skins/_all-skins.min.css" %}"/>
+    <script src="{% static "plugins/tipped-4.6.0/js/tipped/tipped.js" %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "plugins/tipped-4.6.0/css/tipped/tipped.css" %}"/>
+    <script src="{% static "plugins/isloading-v1.0.6/isloading-v1.0.6.js" %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "css/admin.css" %}"/>
+    <link rel="stylesheet" href="{% static "plugins/jquery-confirm-v3.3.0/jquery-confirm.min.css" %}"/>
+    <script src="{% static "plugins/jquery-confirm-v3.3.0/jquery-confirm.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/funcions.js" %}"></script>
+    <script src="{% static "plugins/zxcvbn.js" %}"></script>
+
+    {% block head %}
+
+    {% endblock %}
+    <style>
+        .table thead tr {
+            background: url("{% static 'plugins/dataTables-1.10.15/background/box.png' %}") repeat-x;
+
+        }
+        .table {
+            text-align: center;
+        }
+        th{
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="skin-blue-light layout-top-nav">
+{% block body %}
+
+{% endblock %}
+ <div id="myPassword" class="modal fade" role="dialog">
+    <form class="form-horizontal" id="frm_password" method="POST" action="/"
+          enctype="multipart/form-data">
+        <div class="modal-dialog modal-md" style="width: 30%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title"><b><i class='fa fa-key' aria-hidden='true'></i> Cambio de Contraseña</b>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="id" name="id" value="">
+                    <input type="hidden" id="dir" name="dir" value="">
+                    <div class="form-group">
+                        <label style="font-size: 13px;" class="col-lg-4 control-label">Contraseña:</label>
+                        <div class="col-lg-8">
+                            <input type="password" class="form-control input-sm" id="password" name="password"
+                                   autofocus maxlength="20"
+                                   placeholder="Ingrese su contraseña"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 13px;" class="col-lg-4 control-label">Repita su contraseña:</label>
+                        <div class="col-lg-8">
+                            <input type="password" class="form-control input-sm" name="confirmPassword"
+                                   id="confirmPassword" maxlength="20"
+                                   placeholder="Ingrese su contraseña"/>
+                            <div class="progress password-progress">
+                                <div id="strengthBar" class="progress-bar" role="progressbar"
+                                     style="width: 0;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-sm btn-default btn-flat" name="guardar" id="guardar">
+                            <i class="fa fa-save"></i> Cambiar Contraseña
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default btn-flat" id="reset">
+                            <i class="fa fa-clipboard" aria-hidden="true"></i> Resetear
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="My-photo" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="photo" class="img-responsive img-thumbnail center-block" src="" style="height: 500px;">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="application/javascript">
+    $(function () {
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('.table').on('click', 'img', function () {
+            $('#photo').attr('src', $(this).attr('src'));
+            $('#My-photo').modal('show');
+        });
+    });
+</script>
+</body>
+</html>

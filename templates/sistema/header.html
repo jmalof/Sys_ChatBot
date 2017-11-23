@@ -1,0 +1,81 @@
+{% load static from staticfiles %}
+
+<nav class="navbar navbar-static-top">
+    <a href="{% url 'inicio' %}" class="logo navbar-brand">
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">
+          <i class="fa fa-comments-o" aria-hidden="true"></i> <strong> <small>Social Bot</small></strong>
+        </span>
+    </a>
+        <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 17px;" aria-expanded="false">Diccionario  <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{% url 'diccionario:listado' %}"><i class="fa fa-list-ul" aria-hidden="true"></i> Listado</a></li>
+                <li><a href="{% url 'diccionario:nuevo' %}"><i class="fa fa-plus" aria-hidden="true"></i> Agregar consulta</a></li>
+              </ul>
+            </li>
+        </ul>
+    <div class="navbar-custom-menu">
+
+        <ul class="nav navbar-nav">
+
+
+            <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="{% if not user.usuario.foto %} {% static 'img/jmalof.jpg' %} {% else %} {% static user.usuario.foto %} {% endif %}"
+                         class="user-image" alt="User Image">
+                    <span class="hidden-xs">Bienvenido <strong>{{ user.username }}</strong></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="user-header">
+                        <img src="{% if not user.usuario.foto %} {% static 'img/jmalof.jpg' %} {% else %} {% static user.usuario.foto %} {% endif %}"
+                             class="img-circle" alt="User Image">
+                        <p>
+                            {{ user.get_full_name }}
+                            <small>{{ user.email }}</small>
+                            <small>Registrado: {{ user.date_joined }}</small>
+                            <small>Conexión actual: {{ localhost }}</small>
+                        </p>
+                    </li>
+                    <li class="user-body">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+
+                                <a href="#" id="change_password" class="btn btn-xs btn-default password" data-toggle="tooltip" data-id="{{ user.id }}"
+                                   title="Cambiar contraseña"><i class="fa fa-key"
+                                                                 aria-hidden="true"></i>
+                                    Contraseña</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user-footer">
+                        <p class="text-center">
+                            <span class="label label-primary"><b>Ultimo acceso:</b> {{ user.last_login }}</span>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'desconectar' %}" id="disconnect" data-toggle="tooltip" title="Cerrar sesión">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                </a>
+            </li>
+            <!--<li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>-->
+
+        </ul>
+    </div>
+</nav>
+<script>
+    $(function () {
+        $('.password').on('click', function () {
+            $('.tooltip').remove();
+            var id = $(this).data('id');
+            $('#id').val(id);
+            $('#dir').val('/inicio');
+            $('#myPassword').modal('show');
+        });
+    });
+</script>

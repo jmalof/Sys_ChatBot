@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form class="form" id="frm_objeto">
+    <div class="form-group">
+        <div class="container-fluid">
+            <div class="input-group col-lg-12">
+                <label class="text-black">Palabras claves: </label><br>
+                <input class="form-control input-sm" type="text" id="palabra_clave" name="palabra_clave" placeholder="Ingrese las palabras claves">
+            </div>
+            <br>
+            <div class="input-group col-lg-12">
+                <label class="text-black">Respuesta: </label><br>
+                <textarea class="form-control input-sm" rows="3" style="resize: vertical" id="respuesta" name="respuesta" title="Respuesta" placeholder="Ingrese la respuesta al usuario"></textarea>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+</form>
+</body>
+</html>

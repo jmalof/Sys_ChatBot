@@ -1,0 +1,45 @@
+{% extends 'sistema/base.html' %}
+{% load static from staticfiles %}
+{% block head %}
+    <style>
+        .big-icon {
+            font-size: 190px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+            color: black;
+        }
+        .big-icon2 {
+            font-size: 100px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: 15px;
+            color: black;
+        }
+    .text-icon3{
+        font-size: 30px;
+        position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: 40px;
+            margin-left: 15px;
+    }
+
+    </style>
+{%  endblock %}
+{% block content %}
+    <div class="container">
+        <span>
+            <i class="fa fa-facebook big-icon" aria-hidden="true"></i>
+        </span>
+        <span>
+            <i class="fa fa-comments-o big-icon2" aria-hidden="true"></i>
+        </span>
+        <span><label class="text-icon3">Social Bot</label></span>
+
+    </div>
+{% endblock %}

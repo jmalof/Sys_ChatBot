@@ -1,0 +1,76 @@
+{% extends 'sistema/base.html' %}
+{% load widget_tweaks %}
+{% load static from staticfiles %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+    <section class="content-header">
+        <h1>
+            <i class="{{ icono }}" aria-hidden="true"></i> {{ entidad }}
+            <small>{{ detalle }}</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'inicio' %}"><i class="fa fa-home"></i> Panel</a></li>
+            <li><a href="{{ ruta }}"><i class="{{ icono }}"></i> {{ entidad }}</a></li>
+        </ol>
+    </section>
+    <section class="content">
+        <form class="form-horizontal" id="frm_objeto" method="POST" action="{{ crud }}" enctype="multipart/form-data">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h5><i class="fa fa-th-large" aria-hidden="true"></i> <strong>{{ titulo }}</strong></h5>
+                </div>
+                <div class="box-body">
+                    <div class="container-fluid">
+                        <div class="col-lg-12">
+                            <input type="hidden" id="action" name="action" value="{{ action }}">
+                            <input type="hidden" id="ruta" name="ruta" value="{{ ruta }}">
+                            {% for hidden in form.hidden_fields %}
+                                {{ hidden }}
+                            {% endfor %}
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <div class="form-group">
+                                            <span class="label label-danger">{{ field.label }} : {{ error }}</span>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
+                            {% for field in form.visible_fields %}
+                                <div class="form-group">
+                                    <label style="font-size: 13px;"
+                                           class="col-lg-2 control-label">{{ field.label }}:</label>
+                                    <div class="col-lg-10">
+                                        {{ field|add_class:'form-control input-sm'|attr:'autocomplete:off' }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-sm btn-linkedin btn-flat" name="guardar" id="guardar">
+                            <i class="fa fa-save"></i> {{ boton }}
+                        </button>
+                        <button type="button" class="btn btn-sm btn-linkedin btn-flat" id="reset">
+                            <i class="fa fa-clipboard" aria-hidden="true"></i> Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <script type="application/javascript">
+        $(function () {
+            $('#reset').on('click', function () {
+                $('#frm_objeto').formValidation('resetForm', true);
+                $('select').selectpicker('refresh').selectpicker('val', '');
+                $('form:not(.filter) :input:visible:enabled:first').focus();
+            });
+        });
+    </script>
+    <br><br>
+{% endblock %}

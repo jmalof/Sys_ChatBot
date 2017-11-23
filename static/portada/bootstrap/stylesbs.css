@@ -1,0 +1,342 @@
+body { background: none; }
+
+#content { padding-top: 60px;
+    padding-bottom: 60px;
+    background: none; }
+
+.pd { padding: 5px; }
+
+.icon { width: 130px;
+    float: left;
+    height: 160px;
+    background: #fafafa;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 3px; }
+
+.icon.hovered { background: #999;
+    color: white;
+    cursor: pointer; }
+
+.icon .iconname { font-weight: bold;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 10px; }
+
+.icon .icondesc { font-weight: normal;
+    font-size: 10px;
+    line-height: 10px; }
+
+.icon .iconimage { width: 100%;
+    text-align: center; }
+
+.icon .iconimage img { height: 80px; }
+
+#title.p80 { width: 80%; }
+
+.wide { float: left;
+    width: 100%; }
+
+#nav-footer { 	font-size: 11px;
+    background-image: linear-gradient(to bottom, #008a2e, #00501f);
+    color: #ccc;
+    padding-top:5px;
+    z-index:0;
+    height: 40px; }
+
+#nav-header { font-size: 11px;
+    background-color: #333333;
+    color: #ccc; }
+
+form input, form select, form textarea { color: black;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 0;
+    text-transform: uppercase; }
+
+.form-horizontal .control-group { margin-bottom: 0; }
+
+.form-search { margin-bottom: 0; }
+
+.no-margin-bottom { margin-bottom: 0; }
+
+.row-fluid { margin-bottom: 10px; }
+
+.imp-codigo { width: 200px; }
+
+.imp-descripcion { width: 300px; }
+
+.imp-persona { width: 300px; }
+
+.imp-ruc { width: 130px; }
+
+.imp-comprobantes { width: 140px; }
+
+.imp-number { width: 100px; }
+
+.imp-numbersmall { width: 55px;
+                   text-align: center}
+
+.imp-numbermed-center { width: 100px; text-align: center}
+
+.imp-numbermed-right { width: 100px; text-align: right}
+
+.imp-moneda { width: 100px;
+              text-align: right; }
+
+.imp-anio { width: 50px; text-align: center }
+
+.imp-cedula { width: 110px;}
+
+.imp-email { width: 50%;}
+
+.imp-10 { width: 10%;}
+
+.imp-12 { width: 12%;}
+
+.imp-25 { width: 25%;}
+
+.imp-50 { width: 50%;}
+
+.imp-75 { width: 75%;}
+
+.imp-100 { width: 100%;}
+
+table { background: white; }
+
+table thead tr th { background: #f0f0f0; }
+
+.pagination { margin: 0; float: right; }
+
+.bg1 { 	background: url('/static/images/aok/bg1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg2 { 	background: url('/static/images/aok/bg2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg3 { 	background: url('/static/images/aok/bg3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg4  { 	background: url('/static/images/aok/bg4.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg5 { 	background: url('/static/images/aok/bg5.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg6 { 	background: url('/static/images/aok/bg6.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg7 { 	background: url('/static/images/aok/bolsalaboralbg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg8 { 	background: url('/static/images/aok/preinscrit.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+.bg9 { 	background: url('/static/images/aok/bg7.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+
+#largelogo { position: absolute;
+    top: -110px;
+    right: 20px;
+    opacity: 0.7; }
+
+.bigger { font-size: 16px; }
+
+.larger { font-size: 14px; }
+
+.smaller { font-size: 10px; }
+
+.input-mini { width: 42px; }
+
+.nota { text-align: center;
+    font-size: 10px;  }
+
+.marcado { 	background: yellow;
+    font-weight: bold; }
+
+.table-condensed { margin-bottom: 0; }
+
+a:hover { text-decoration: none; }
+
+.margeninferior { margin-bottom: 10px; }
+
+h4 { font-size: 16px;
+    margin: 0; }
+
+h5 { margin: 0; }
+
+h3 { font-size: 20px;
+    line-height: 20px; }
+
+.bookrepr {
+    width: 370px;
+    float: left;
+    height: 120px; }
+
+.bookrepr img { 	float: left;
+    margin-right: 7px; }
+
+.booksection { float: left; }
+
+div.progress { 	height: 12px;
+    margin-bottom: 0; }
+
+#encuestapanel form { margin: 0; }
+
+.label { white-space: normal; }
+
+.navbar-inverse .navbar-inner { background-image: linear-gradient(to bottom, #00501f, #008a2e);
+    color:#ffffff; }
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a { color:#ffffff; }
+
+.navbar-inverse .divider-vertical { border-left-color:#e2e4e2;
+    border-right-color:#e2e4e2; }
+
+.celdacalendarioheader { width: 14%;
+    height: 40px; }
+
+.help-text { color: red; }
+
+
+.custom-multiselect {
+    height: inherit;
+    padding: 2px 4px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden; }
+
+.custom-multiselect > ul {
+    margin: 0;
+    padding: 0; }
+
+.custom-multiselect > ul > div > li {
+    color: #000000;
+    font-size: 16px;
+    text-transform: uppercase; }
+
+.custom-multiselect > ul > div > li > input {
+    margin: 0; }
+
+.custom-multiselect > ul > div {
+    overflow: hidden;
+    height: 20px; }
+
+.selectorfecha {
+    text-align: center;
+    width: 90px; }
+
+.selectorhora {
+    text-align: center;
+    width: 70px; }
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinkimg {
+    animation: blink 1s;
+    animation-iteration-count: infinite; }
+
+.trMouseOut { cursor: pointer; }
+
+.trMouseOver { cursor: pointer;
+    cursor: hand; }
+
+.titleform {
+    min-height: 20px;
+    padding: 5px;
+    margin-bottom: 2px;
+    background-color: #cccccc;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+.form-s {
+    width: 450px;
+    min-height: 100px;
+    margin: 25px auto; }
+
+.form-m {
+    width: 650px;
+    min-height: 100px;
+    margin: 25px auto; }
+
+.form-l {
+    width: 850px;
+    min-height: 100px;
+    margin: 25px auto; }
+
+.form-xl {
+    width: 1300px;
+    min-height: 100px;
+    margin: 25px auto; }
+
+.dropdown-submenu .dropdown-menu {
+    min-width: 230px; }
+
+.navbar .brand { margin-top: 7px;
+    margin-left: 2px;
+    padding: 0; }
+
+.materiasseleccionmodal {  width: 1000px;
+    margin-left: -450px; }
+
+.textatright { text-align: right; }
+
+.textatleft { text-align: left; }
+
+.textatcenter { text-align: center; }
+
+.form-search { margin-bottom: 0 }
+
+.searchinput { max-width: 300px }
+
+.control-group { margin-bottom: 0 }

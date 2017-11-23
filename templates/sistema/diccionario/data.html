@@ -1,0 +1,56 @@
+{% extends 'sistema/data.html' %}
+{% load staticfiles %}
+{% block head %}
+    <script type="application/javascript" src="{% static 'js/data_diccionario.js' %}"></script>
+{% endblock%}
+{% block columns %}
+    <th class="colum" style="width:5%;">N°</th>
+    <th class="colum" style="width: 30%;">Palabras clave</th>
+    <th class="colum" style="width: 40%;">Respuesta</th>
+    <th class="colum" style="width: 15%;">Fecha registro</th>
+    <th class="colum" style="width: 10%;"><em class="fa fa-cog"></em></th>
+{% endblock %}
+
+{% block rows %}
+    {% for d in datos %}
+        <tr class="fila">
+            <td style="font-size: 13px;text-align: center">{{ d.id }}</td>
+            <td style="font-size: 13px">{{ d.palabra_clave }}</td>
+            <td style="font-size: 13px;text-align: center">{{ d.respuesta }}</td>
+            <td style="font-size: 13px;text-align: center">{{ d.fecha_reg }}</td>
+
+            <td class="text-center">
+                <a class="btn btn-success btn-xs editar" href="#" rel="editar" data-toggle="tooltip" data-id="{{ d.id }}"
+                   data-placement="bottom" title="Editar">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" rel="eliminar"  href="#"
+                   data-toggle="tooltip" data-placement="bottom" title="Borrar">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+            </td>
+        </tr>
+         <div class="modal fade" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+
+                    </div>
+                    <div class="modal-footer container-fluid" id="modal-footer" >
+                        <span class='alert text-info text-center'>Escanear el código para más información</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <script type="text/javascript">
+
+</script>
+{% endblock %}
