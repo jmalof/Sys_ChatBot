@@ -43,7 +43,7 @@ class conexion(generic.View):
                     print(message)
                     # Assuming the sender only sends text. Non-text messages like stickers, audio, pictures
                     # are sent as attachments and must be handled accordingly.
-                    if ['text'] in message['message']:
+                    if 'text' in message['message']:
                         post_facebook_message(message['sender']['id'], message['message']['text'])
                     else:
                         post_facebook_message_not_text(message['sender']['id'])
