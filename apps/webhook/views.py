@@ -56,10 +56,13 @@ def post_facebook_message(fbid, mensaje_recibido):
     texto_salida = ''
     for palabra in texto_entrada:
         if Diccionario.objects.filter(palabra_clave=palabra).exists():
-            texto_salida = random.choice(Diccionario.objects.filter(palabra_clave=palabra))
+            listado = Diccionario.objects.filter(palabra_clave=palabra)
+            random_index = random.randint(0, listado.count() - 1)
+            obj = listado[random_index]
+            texto_salida = obj.respuesta
             break
     if not texto_salida:
-        texto_salida = "No hemos comprendido tu mensaje, intentalo de otra forma"
+        texto_salida = "No hemos comprendido tu mensaje, intentalo de otra forma."
 
     user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
     user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': TOKEN_ACCESO}
