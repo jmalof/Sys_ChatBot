@@ -58,9 +58,9 @@ def post_facebook_message(fbid, mensaje_recibido):
     for palabra in texto_entrada:
         print("palabra", palabra)
 
-        if Diccionario.objects.filter(palabra_clave__iexact=palabra).exists():
+        if Diccionario.objects.filter(palabra_clave__search=palabra).exists():
             print("existe", palabra)
-            listado = Diccionario.objects.filter(palabra_clave__iexact=palabra)
+            listado = Diccionario.objects.filter(palabra_clave__search=palabra)
             random_index = random.randint(0, listado.count() - 1)
             obj = listado[random_index]
             texto_salida += obj.respuesta
