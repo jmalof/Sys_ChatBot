@@ -43,7 +43,10 @@ class conexion(generic.View):
                     print(message)
                     # Assuming the sender only sends text. Non-text messages like stickers, audio, pictures
                     # are sent as attachments and must be handled accordingly.
-                    post_facebook_message(message['sender']['id'], message['message']['text'])
+                    if message['message']['text']:
+                        post_facebook_message(message['sender']['id'], message['message']['text'])
+                    else:
+                        post_facebook_message_not_text(message['sender']['id'])
         return HttpResponse()
 
 
@@ -57,6 +60,23 @@ def post_facebook_message(fbid, mensaje_recibido):
             break
     if not texto_salida:
         texto_salida = "No hemos comprendido tu mensaje, intentalo de otra forma"
+
+    user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
+    user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': TOKEN_ACCESO}
+    user_details = requests.get(user_details_url, user_details_params).json()
+    joke_text = 'Yo ' + user_details['first_name'] + '..! ' + texto_salida
+
+    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s' % TOKEN_ACCESO
+    response_msg = json.dumps({"recipient": {"id": fbid}, "message": {"text": joke_text}})
+    status = requests.post(post_message_url, headers={"Content-Type": "application/json"}, data=response_msg)
+    print(status.json())
+
+
+def post_facebook_message_not_text(fbid):
+    # Remove all punctuations, lower case the text and split it based on space
+
+
+    texto_salida = ":)"
 
     user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
     user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': TOKEN_ACCESO}
