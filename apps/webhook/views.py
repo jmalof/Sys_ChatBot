@@ -54,10 +54,11 @@ def post_facebook_message(fbid, mensaje_recibido):
     # Remove all punctuations, lower case the text and split it based on space
     texto_entrada = re.sub(r"[^a-zA-Z0-9\s]", ' ', mensaje_recibido).lower().split()
     texto_salida = ''
-
+    print("aqui",texto_entrada)
     for palabra in texto_entrada:
+        print("palabra", palabra)
         if Diccionario.objects.filter(palabra_clave__contains=palabra).exists():
-            print(texto_entrada)
+            print("existe", palabra)
             listado = Diccionario.objects.filter(palabra_clave__contains=palabra)
             random_index = random.randint(0, listado.count() - 1)
             obj = listado[random_index]
