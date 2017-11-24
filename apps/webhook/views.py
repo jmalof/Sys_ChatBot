@@ -52,7 +52,7 @@ class conexion(generic.View):
 
 def post_facebook_message(fbid, mensaje_recibido):
     # Remove all punctuations, lower case the text and split it based on space
-    texto_entrada = re.sub(r"[^a-zA-Z0-9\s]", ' ', mensaje_recibido).lower().split()
+    texto_entrada = re.sub(r"[^a-zA-ZáéíóúÁÉÍÓÚ0-9\s]", ' ', mensaje_recibido).lower().split()
     texto_salida = ''
     print("aqui",texto_entrada)
     for palabra in texto_entrada:
