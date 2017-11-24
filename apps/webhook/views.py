@@ -57,6 +57,7 @@ def post_facebook_message(fbid, mensaje_recibido):
     print("aqui",texto_entrada)
     for palabra in texto_entrada:
         print("palabra", palabra)
+        print(Diccionario.objects.all())
         if Diccionario.objects.filter(palabra_clave__contains=palabra).exists():
             print("existe", palabra)
             listado = Diccionario.objects.filter(palabra_clave__contains=palabra)
