@@ -55,16 +55,15 @@ def post_facebook_message(fbid, mensaje_recibido):
     texto_entrada = re.sub(r"[^a-zA-ZáéíóúÁÉÍÓÚ0-9\s]", ' ', mensaje_recibido).lower().split()
     texto_salida = ''
     print("aqui",texto_entrada)
-    for palabra in texto_entrada:
-        print("palabra", palabra)
 
-        if Diccionario.objects.filter(palabra_clave__contains=palabra).exists():
-            print("existe", palabra)
-            listado = Diccionario.objects.filter(palabra_clave__contains=palabra)
-            random_index = random.randint(0, listado.count() - 1)
-            obj = listado[random_index]
-            texto_salida += obj.respuesta
-            break
+    if Diccionario.objects.filter(palabra_clave__in=texto_entrada).exists():
+        print("existe")
+        listado = Diccionario.objects.filter(palabra_clave__in=texto_entrada)
+        random_index = random.randint(0, listado.count() - 1)
+        obj = listado[random_index]
+        texto_salida += obj.respuesta
+
+
     if not texto_salida:
         texto_salida = "No hemos comprendido tu mensaje, inténtalo de otra forma."
 
