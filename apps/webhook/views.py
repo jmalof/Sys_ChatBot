@@ -71,7 +71,7 @@ def post_facebook_message(fbid, mensaje_recibido):
     user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
     user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': TOKEN_ACCESO}
     user_details = requests.get(user_details_url, user_details_params).json()
-    texto_salida = '%s, '+texto_salida % user_details['first_name']
+    texto_salida = '%s, '% user_details['first_name'] + texto_salida
 
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s' % TOKEN_ACCESO
     response_msg = json.dumps({"recipient": {"id": fbid}, "message": {"text": texto_salida}})
