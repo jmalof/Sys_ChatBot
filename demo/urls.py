@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^inicio/',  views.inicio,  name='inicio'),
     url(r'^diccionario/', include('apps.diccionario.urls', namespace='diccionario')),
 
-
+    url(r'^politicas/',  views.politica,  name='politicas'),
 
     url(r'^webhook/', include('apps.webhook.urls', namespace='webhook')),
 

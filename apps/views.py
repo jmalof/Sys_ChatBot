@@ -29,7 +29,10 @@ def callback_login(request):
     return render(request, 'sistema/login/callback_login.html', data)
 
 
+def politica(request):
+    data={'titulo':'Política de Privacidad - Social Bot'}
 
+    return render(request, 'sistema/politica/politica.html', data)
 def requerimientos():
     import pip
     with open("requirements.txt", "w") as f:
