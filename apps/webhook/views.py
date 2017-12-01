@@ -14,6 +14,17 @@ from django.views.decorators.csrf import csrf_exempt
 from apps.diccionario.models import Diccionario
 
 
+NO_ENCONTRADO=(
+    (1,'No he comprendido tu mensaje, inténtalo de otra forma.'),
+    (2,'No entendí tu mensaje, comprueba si hay errores de escritura e inténtalo nuevamente.'),
+    (3,'Disculpa aún no he aprendido sobre eso :( '),
+    (4,'¯\_(ツ)_/¯'),
+)
+NO_TEXTO=(
+    (1,';)'),
+    (2,':)'),
+)
+
 
 
 TOKEN_ACCESO = 'EAAaHZCmVpgGIBACgEyELkf2xgNl3D82krBdxtXo0SZA4CNoOzrNDS2Hts6B5F5ZB9SC3FpEEob1qwenYU49qXphTK91TjZABkmeHgJEx5xDl83mSXPciJ07sgo5lGZAunIirbH4liz7y11FY0TIAdW5fWcpfVkQ9TWE9eLCy8MAZDZD'
@@ -52,21 +63,37 @@ class conexion(generic.View):
 
 def post_facebook_message(fbid, mensaje_recibido):
     # Remove all punctuations, lower case the text and split it based on space
-    texto_entrada = re.sub(r"[^a-zA-ZáéíóúÁÉÍÓÚ0-9\s]", ' ', mensaje_recibido).lower().split()
+    texto_entrada = str(mensaje_recibido).strip()
     texto_salida = ''
+
     print("texto entrada",texto_entrada)
-    for palabra in texto_entrada:
-        print("palabra", palabra)
-        if len(palabra) >= 3:
-            print("existe", palabra)
-            if Diccionario.objects.filter(palabra_clave__icontains=palabra).exists():
-                listado = Diccionario.objects.filter(palabra_clave__icontains=palabra)
-                random_index = random.randint(0, listado.count() - 1)
-                obj = listado[random_index]
-                texto_salida += obj.respuesta
-                break
+    if len(texto_entrada) >= 3:
+        print("existe", texto_entrada)
+        if Diccionario.objects.filter(palabra_clave__icontains=texto_entrada).exists():
+            listado = Diccionario.objects.filter(palabra_clave__icontains=texto_entrada)
+            random_index = random.randint(0, listado.count() - 1)
+            obj = listado[random_index]
+            texto_salida += obj.respuesta
+
+
     if not texto_salida:
-        texto_salida = "No hemos comprendido tu mensaje, inténtalo de otra forma."
+        texto_entrada = re.sub(r"[^a-zA-ZáéíóúÁÉÍÓÚ0-9\s]", ' ', mensaje_recibido).lower().split()
+        for palabra in texto_entrada:
+            print("palabra", palabra)
+            if len(palabra) >= 3:
+                print("existe", palabra)
+                if Diccionario.objects.filter(palabra_clave__icontains=palabra).exists():
+                    listado = Diccionario.objects.filter(palabra_clave__icontains=palabra)
+                    random_index = random.randint(0, listado.count() - 1)
+                    obj = listado[random_index]
+                    texto_salida += obj.respuesta
+                    break
+
+    if not texto_salida:
+        d = dict(NO_ENCONTRADO)
+        index = random.randint(1, len(d))
+        texto_salida = d[index]
+
 
     user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
     user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': TOKEN_ACCESO}
@@ -80,10 +107,10 @@ def post_facebook_message(fbid, mensaje_recibido):
 
 
 def post_facebook_message_not_text(fbid):
-    # Remove all punctuations, lower case the text and split it based on space
 
-
-    texto_salida = ":)"
+    d = dict(NO_TEXTO)
+    index = random.randint(1, len(d))
+    texto_salida = d[index]
     '''
     user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
     user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': TOKEN_ACCESO}
