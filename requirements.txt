@@ -9,7 +9,7 @@ dj-static==0.0.6
 dj-database-url==0.4.2
 xhtml2pdf==0.2b1
 webencodings==0.5.1
-urllib3==1.22
+urllib3==1.26.5
 six==1.11.0
 setuptools==28.8.0
 requests==2.18.4
