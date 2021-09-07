@@ -19,7 +19,7 @@ PyPDF2==1.26.0
 psycopg2==2.7.1
 pisa==3.0.33
 pip==9.0.1
-Pillow==4.1.0
+Pillow==8.3.2
 olefile==0.44
 idna==2.6
 httplib2==0.10.3
