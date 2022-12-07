@@ -27,5 +27,5 @@ html5lib==1.0b10
 gunicorn==19.1.1
 dj-config-url==0.1.1
 chardet==3.0.4
-certifi==2017.11.5
+certifi==2022.12.7
 whitenoise==3.3.1
